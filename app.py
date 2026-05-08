@@ -70,9 +70,9 @@ if uploaded_file is not None:
         
         st.subheader("📈 2. 시계열 예측 결과 시각화")
         # Plotly 시각화 (Datetime 포맷으로 복구)
-        train_dates = y_train.index.to_timestamp().astype(str)
-        test_dates = y_test.index.to_timestamp().astype(str)
-        pred_dates = y_pred.index.to_timestamp().astype(str)
+        train_dates = y_train.index.astype(str)
+        test_dates = y_test.index.astype(str)
+        pred_dates = y_pred.index.astype(str)
 
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=train_dates, y=y_train.values, mode='lines', name='Train Data', line=dict(color='#1f77b4')))
